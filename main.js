@@ -26,6 +26,16 @@
 const getNames = [];
 const createTeam = ['Junior developer', 'Middle developer', 'Senior developer', 'Junior QA', 'Middle QA', 'Senior QA', 'Project manager'];
 
+// создаем цикл, который принимает имена сотрудиков и создает массив имен с таким же количеством как массив специальностей.
+for (i = 0; i < createTeam.length; i++) {
+    let getName = prompt(`Ведите имя сотрудника команды ${createTeam[i]}`);
+    getNames.push(getName);
+}
+
+
+console.log(getNames);
+
+
 const team = {};
 
 let salary = Math.random();
