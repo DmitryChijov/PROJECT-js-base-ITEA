@@ -1,4 +1,5 @@
-// 1. Принять от пользователя имена людей для набора в команду. Имена принять и сохранить в новом массиве. Количество имён должно соответсвовать количеству должностей. Массив с должностями - ['Junior developer', 'Middle developer', 'Senior developer', 'Junior QA', 'Middle QA', 'Senior QA', 'Project manager'].
+// 1. Принять от пользователя имена людей для набора в команду. Имена принять и сохранить в новом массиве. Количество имён должно соответсвовать количеству должностей. 
+// Массив с должностями - ['Junior developer', 'Middle developer', 'Senior developer', 'Junior QA', 'Middle QA', 'Senior QA', 'Project manager'].
 // 2. Создать объект team в котором будут храниться новые объекты-сотрудники с параметрами name и position, данные для этих свойств добавляем из массивов.
 // 3. Добавить сотрудникам зарплаты (свойство salary) при помощи метода Math.random(), который будет выдавать произвольное число в промежутке между N1 и N2 исходя из принципа:
 // если в должности есть слово "junior" сумма будет от 500 до 1000;
@@ -21,3 +22,24 @@
 // создание цикла для установки метода tellAboutYourSelf();
 // создание team.showTeam = function() {...};
 // вызов метода showTeam();
+
+const getNames = [];
+const createTeam = ['Junior developer', 'Middle developer', 'Senior developer', 'Junior QA', 'Middle QA', 'Senior QA', 'Project manager'];
+
+const team = {};
+
+let salary = Math.random();
+
+// const position = 
+
+const calculatesSalary = function(position) {
+
+        if (salary < 0.34) {
+            computer = 'камень';
+        } else if (salary <= 0.68) {
+            computer = 'ножницы';
+        } else {
+            computer = 'бумага';
+        }
+
+}
