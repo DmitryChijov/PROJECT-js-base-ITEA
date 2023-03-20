@@ -23,17 +23,25 @@
 // создание team.showTeam = function() {...};
 // вызов метода showTeam();
 
+
 const createTeam = ['Junior developer', 'Middle developer', 'Senior developer', 'Junior QA', 'Middle QA', 'Senior QA', 'Project manager'];
-const getNames = []; // массив для будущих имен сотрудников
+const arrayGetNames = [];
 
 
-// создаем цикл, который принимает имена сотрудиков и создает массив имен с таким же количеством как массив специальностей.
-for (i = 0; i < createTeam.length; i++) {
-    let getName = prompt(`Ведите имя сотрудника команды ${createTeam[i]}`);
-    getNames.push(getName);
+// создаем функцию, который принимает имена сотрудиков и создает массив имен с таким же количеством как массив специальностей.
+function getNames() {
+
+    
+
+    for (i = 0; i < createTeam.length; i++) {
+
+        let getName = prompt(`Ведите имя сотрудника команды ${createTeam[i]}`);
+        arrayGetNames.push(getName);
+    }
 }
+getNames();
 
-console.log(getNames);
+
 
 
 // создаем массив из объектов с свойствами name и position
@@ -42,7 +50,7 @@ const team = [];
 
 for (j = 0; j < createTeam.length; j++) {
     let obj = {};
-    obj.name = getNames[j];
+    obj.name = arrayGetNames[j];
     obj.position = createTeam[j];
     team.push(obj);
 }
@@ -93,8 +101,40 @@ for (member of team) {
 }
 
 
-// создаем метод выводящий данный всей команды
-showTeam()
+// создаем метод выводящий данные всей команды
+
+function showTeam() {
+    for (member of team) {
+        console.log(`${member.name} - ${member.position}. Зарплата - ${member.salary}$.`);
+    }
+}
+
+showTeam();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
