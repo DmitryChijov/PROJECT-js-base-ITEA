@@ -23,8 +23,9 @@
 // создание team.showTeam = function() {...};
 // вызов метода showTeam();
 
-const getNames = [];
 const createTeam = ['Junior developer', 'Middle developer', 'Senior developer', 'Junior QA', 'Middle QA', 'Senior QA', 'Project manager'];
+const getNames = []; // массив для будущих имен сотрудников
+
 
 // создаем цикл, который принимает имена сотрудиков и создает массив имен с таким же количеством как массив специальностей.
 for (i = 0; i < createTeam.length; i++) {
@@ -40,7 +41,7 @@ console.log(getNames);
 const team = [];
 
 for (j = 0; j < createTeam.length; j++) {
-    var obj = {};
+    let obj = {};
     obj.name = getNames[j];
     obj.position = createTeam[j];
     team.push(obj);
@@ -65,34 +66,37 @@ for (member of team) {
         
     } else if (!member.position.toLowerCase().indexOf('middle')) {
         member.salary = getRandomInt(1500, 2000);
+
     } else if (!member.position.toLowerCase().indexOf('senior')) {
         member.salary = getRandomInt(2500, 3000);
+
     } else {
         member.salary = getRandomInt(4000, 4500);
     }
 }
+
 console.table(team);
 
 
+// создаем и добавляем в каждый объект метод, который будет сообщать информацию о сотруднике
 
+for (member of team) {
 
-
-
-let salary = Math.random();
-
-// const position = 
-
-const calculatesSalary = function(position) {
-
-        if (salary < 0.34) {
-            computer = 'камень';
-        } else if (salary <= 0.68) {
-            computer = 'ножницы';
-        } else {
-            computer = 'бумага';
-        }
-
+    member.tellAboutYourSelf = function() {
+                                console.log(`Меня зовут ${this.name} и я - ${this.position}. Я зарабатываю ${this.salary}$.`);
+                                } 
 }
+
+
+for (member of team) {
+    member.tellAboutYourSelf();
+}
+
+
+// создаем метод выводящий данный всей команды
+showTeam()
+
+
 
 
 // вывод полей из объекта
