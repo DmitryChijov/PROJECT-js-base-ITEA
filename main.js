@@ -25,13 +25,12 @@
 
 
 const createTeam = ['Junior developer', 'Middle developer', 'Senior developer', 'Junior QA', 'Middle QA', 'Senior QA', 'Project manager'];
-const arrayGetNames = [];
+const arrayGetNames = []; //массив для будущих имен сотрудников
 
 
 // создаем функцию, который принимает имена сотрудиков и создает массив имен с таким же количеством как массив специальностей.
 function getNames() {
 
-    
 
     for (i = 0; i < createTeam.length; i++) {
 
@@ -44,18 +43,18 @@ getNames();
 
 
 
-// создаем массив из объектов с свойствами name и position
+// создаем массив из объектов со свойствами name и position
 
 const team = [];
 
 for (j = 0; j < createTeam.length; j++) {
+
     let obj = {};
     obj.name = arrayGetNames[j];
     obj.position = createTeam[j];
     team.push(obj);
 }
 
-console.log(team);
 
 
 // расчитываем и добавляем salary
