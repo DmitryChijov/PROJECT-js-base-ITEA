@@ -32,11 +32,51 @@ for (i = 0; i < createTeam.length; i++) {
     getNames.push(getName);
 }
 
-
 console.log(getNames);
 
 
-const team = {};
+// создаем массив из объектов с свойствами name и position
+
+const team = [];
+
+for (j = 0; j < createTeam.length; j++) {
+    var obj = {};
+    obj.name = getNames[j];
+    obj.position = createTeam[j];
+    team.push(obj);
+}
+
+console.log(team);
+
+
+// расчитываем и добавляем salary
+
+function getRandomInt(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min)) + min;
+};
+
+
+for (member of team) {
+
+    if (!member.position.toLowerCase().indexOf('junior')) {
+        member.salary = getRandomInt(500, 1000);
+        
+    } else if (!member.position.toLowerCase().indexOf('middle')) {
+        member.salary = getRandomInt(1500, 2000);
+    } else if (!member.position.toLowerCase().indexOf('senior')) {
+        member.salary = getRandomInt(2500, 3000);
+    } else {
+        member.salary = getRandomInt(4000, 4500);
+    }
+}
+console.table(team);
+
+
+
+
+
 
 let salary = Math.random();
 
@@ -53,3 +93,37 @@ const calculatesSalary = function(position) {
         }
 
 }
+
+
+// вывод полей из объекта
+// let animals = [ 
+//     { name: 'Vasya', type: 'Cat', age: 4},
+//     { name: 'Murka', type: 'Cat', age: 1.5 },
+//     { name: 'Varna', type: 'Turtle', age: 21 },
+//     { name: 'Kesha', type: 'Parrot', age: 3 },
+//     { name: 'Nayda', type: 'Dog', age: 2.5 },
+//     { name: 'Pufic', type: 'Humster', age: 2.5 },
+//     { name: 'Randy', type: 'dog', age: 12 },
+// ];
+// document.write('<ol start="0">');
+// animals.forEach( animal => {
+//   document.write(`<li>${animal.type} <span style="color: #1a55cc">${animal.name}</span> 
+//            is ${animal.age} years old.</li>`);
+// });
+// document.write('<ol>');
+
+
+// добавление свойства в обїект
+// Создадим новый объект, добавив к исходному объекту новое свойство, не меняя при этом исходный объект.
+
+// const spreadableObject = {
+//   name: 'Robert',
+//   phone: 'iPhone'
+// };
+
+// const newObject = {
+//   ...spreadableObject,
+//   carModel: 'Volkswagen'
+// }
+// объект newObject будет выглядеть так:
+// { carModel: 'Volkswagen', name: 'Robert', phone: 'iPhone' }
